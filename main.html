@@ -1,16 +1,108 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .comment-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comment-input {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            resize: vertical;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea::placeholder {
+            color: #999;
+        }
+
+        button {
+            align-self: flex-end;
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .comments {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comment {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .comment-author {
+            font-weight: bold;
+        }
+
+        .comment-date {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
+    <div class="comment-section">
+        <div class="comment-input">
+            <textarea placeholder="Write your comment here..." rows="4" cols="50"></textarea>
+            <button>Submit</button>
+        </div>
+        <ul class="comments">
+            <li class="comment">
+                <div class="comment-author">John Doe</div>
+                <div class="comment-date">December 24, 2024</div>
+                <div class="comment-text">This is an example of a comment.</div>
+            </li>
+            <li class="comment">
+                <div class="comment-author">Jane Smith</div>
+                <div class="comment-date">December 23, 2024</div>
+                <div class="comment-text">Another sample comment to show the design.</div>
+            </li>
+            <li class="comment">
+                <div class="comment-author">Alex Johnson</div>
+                <div class="comment-date">December 22, 2024</div>
+                <div class="comment-text">Yet another example to ensure the order is correct.</div>
+            </li>
+        </ul>
+    </div>
 </body>
-
 </html>
+
