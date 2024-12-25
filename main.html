@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comments Section</title>
+    <title>Comment Section</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +13,10 @@
         .comments-section {
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        .comments-section h2 {
+            text-align: center;
         }
 
         .comment {
@@ -34,27 +38,34 @@
         }
 
         .comment-input {
+            display: flex;
+            flex-direction: column;
             margin-top: 20px;
         }
 
-        .comment-input textarea {
+        textarea {
             width: 100%;
             min-height: 100px;
             resize: vertical;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-        .comment-input button {
+        .submit-button {
+            align-self: flex-start;
             margin-top: 10px;
-            display: block;
             padding: 10px 20px;
-            background-color: #007BFF;
+            font-size: 16px;
             color: #fff;
+            background-color: #007BFF;
             border: none;
             border-radius: 4px;
             cursor: pointer;
         }
 
-        .comment-input button:hover {
+        .submit-button:hover {
             background-color: #0056b3;
         }
     </style>
@@ -63,25 +74,45 @@
     <div class="comments-section">
         <h2>Comments</h2>
 
-        <!-- Display Dummy Comments -->
-        <div class="comment">
-            <span class="comment-author">John Doe</span>
-            <span class="comment-date"> - Dec 24, 2024</span>
-            <p class="comment-text">This is a great feature!</p>
-        </div>
-        <div class="comment">
-            <span class="comment-author">Jane Smith</span>
-            <span class="comment-date"> - Dec 23, 2024</span>
-            <p class="comment-text">I really like this layout. Keep up the good work!</p>
+        <!-- Display Comments -->
+        <div id="comments-list">
+            <div class="comment">
+                <span class="comment-author">John Doe</span>
+                <span class="comment-date"> - Dec 24, 2024</span>
+                <p class="comment-text">This is a great feature!</p>
+            </div>
+            <div class="comment">
+                <span class="comment-author">Jane Smith</span>
+                <span class="comment-date"> - Dec 23, 2024</span>
+                <p class="comment-text">I really like this layout. Keep up the good work!</p>
+            </div>
         </div>
 
         <!-- Comment Input Section -->
         <div class="comment-input">
-            <textarea rows="4" cols="50" placeholder="Write your comment here..."></textarea>
-            <button type="button">Submit</button>
+            <textarea id="comment-input" rows="4" cols="50" placeholder="Write your comment here..."></textarea>
+            <button class="submit-button" onclick="submitComment()">Submit</button>
         </div>
     </div>
+
+    <script>
+        function submitComment() {
+            // Retrieve input value
+            const commentInput = document.getElementById("comment-input");
+            const commentText = commentInput.value.trim();
+
+            // Check if input is not empty
+            if (commentText === "") {
+                alert("Please write a comment before submitting.");
+                return;
+            }
+
+            // Simulate adding a new comment (without rendering it on the screen)
+            console.log("New Comment Submitted:", commentText);
+
+            // Clear the input field
+            commentInput.value = "";
+        }
+    </script>
 </body>
 </html>
-
-
